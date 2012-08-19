@@ -26,6 +26,10 @@ to the code**
 
 	In addtion to creating Application specific Token and Secret, we also need to generate **user** specific tokens.
 
+	To do this select 'Create my access token' at the bottom of the application overview page.
+
+	![Create Access Token](https://dl.dropbox.com/u/15072725/projects/node/The%20craziest%20App%20Ever%20%7C%20Twitter%20Developers.jpg)
+
 5. Verify you have both a Consumer Secret and an Oauth Token created. 
 
 	Go to the Oauth Tab on the Application Overview page to verify you have all 4 keys/tokens.
