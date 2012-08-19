@@ -1,4 +1,4 @@
-#Accessing Twitter with Node.js and ntwitter
+#Accessing Twitter API with Node and ntwitter
 
 The purpose of this application is to demonstrate two simple examples of how to access Twitter's API from a server written in
 Node.js. The use cases demonstrated are
