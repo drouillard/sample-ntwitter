@@ -1,7 +1,7 @@
 #Accessing Twitter API with Node and ntwitter
 
 The purpose of this application is to demonstrate two simple examples of how to access Twitter's API from a server written in
-Node.js. The use cases demonstrated are
+Node.js. This application uses ntwitter, which can be found on github [here](https://github.com/AvianFlu/ntwitter). The use cases demonstrated are
 
 1. An application that only makes calls on its own behalf. An example of this would be an analytics application which is using the API on its on behalf. This is referred to as the Single User Example in the Application code.
 
@@ -39,26 +39,36 @@ to the code**
 	![Verifying Application Setup](https://dl.dropbox.com/u/15072725/projects/node/My%20Sample%20App%20Must%20Be%20Unique%20%7C%20Twitter%20Developers.jpg)
 
 
-##Setup Locally
+##Setup Local
 
-```
-$ npm install express
-```
+The two main packages here are express and ntwitter
 
-```
-$ npm install ntwitter
-```
+1. Install Express
 
-Install Dependencies
+	```
+	$ npm install express
+	```
 
-```
-$ npm install
-```
+2. Install ntwitter
 
-Run the Server
+	```
+	$ npm install ntwitter
+	```
 
-```
-$ node app.js
-```
+3. Run the Server
 
-Go to [http://localhost:3000](http://localhost:3000)
+	```
+	$ node app.js
+	```
+
+4. Update app.js with correct tokens/keys
+
+	```
+	Search for TODO in app.js to find all necessary code that needs to be updated
+	```
+
+5. Connect to Server via Browser
+
+
+	Go to [http://localhost:3000](http://localhost:3000)
+

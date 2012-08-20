@@ -47,9 +47,10 @@
     app.get('/single', function(req, res){
       console.log("Entering Single User Example...");
 
-  /* Be sure to include all 4 items here. For each Consumer/Ouath supply Key/Secret
-   * These won't work. I am leaving them to make it easier to compare to screenshots found at
-   * http://www.github.com/
+  /* Be sure to include all 4 tokens.
+   * Default keys don't work. I am leaving them to make it easier to compare to screenshots found at
+   * https://github.com/drouillard/sample-ntwitter
+   * NOTE: In a real application do not embedd your keys into the source code
    * TODO: Fill in your Application information here
    */
    var twit = new ntwitter({
@@ -82,28 +83,43 @@
 app.get('/signin_with_twitter', function(req, res){
   console.log("Entering Sign-in With Twitter Example...");
   
-  var twit = new ntwitter({
+  /** 
+   * Include only Application Specific Tokens. User Sign-in with Twitter to get Ouath tokens
+   * Default keys don't work. I am leaving them to make it easier to compare to screenshots found at
+   * https://github.com/drouillard/sample-ntwitter
+   * NOTE: In a real application do not embedd your keys into the source code
+   * TODO: Fill in your Application information here
+   */
+   var twit = new ntwitter({
     consumer_key: 'EibJRBO1NGcJvpxAIZnXjQ',
     consumer_secret: '4etBzAdBXqe2uzHR4BN1fut1DBeGeyR0PEFuLCB1YzU'});
-  
-  var path = url.parse(req.url, true);
-  twit.login(path.pathname,"/twitter_callback")(req,res);
+
+   var path = url.parse(req.url, true);
+   twit.login(path.pathname,"/twitter_callback")(req,res);
 
     /** 
-      * Do NOT include any sort of template rendering here
-      * If you do so, it will prevent the redirect to Twitter from happening
-      * res.render('do_not_enable ');
-      */
-    });
+     * Do NOT include any sort of template rendering here
+     * If you do so, it will prevent the redirect to Twitter from happening
+     * res.render('do_not_enable ');
+     */
+   });
 
 app.get('/twitter_callback', function(req, res){
   console.log("Sucessfully Authenticated with Twitter...");
 
-  var twit = new ntwitter({
+  /** 
+   * Include only Application Specific Tokens. User Sign-in with Twitter to get Ouath Tokens
+   * Default keys don't work. I am leaving them to make it easier to compare to screenshots found at
+   * https://github.com/drouillard/sample-ntwitter
+   * NOTE: In a real application do not embedd your keys into the source code
+   * TODO: Fill in your Application information here
+   */
+
+   var twit = new ntwitter({
     consumer_key: 'EibJRBO1NGcJvpxAIZnXjQ',
     consumer_secret: '4etBzAdBXqe2uzHR4BN1fut1DBeGeyR0PEFuLCB1YzU'});
 
-  twit.gatekeeper()(req,res,function(){
+   twit.gatekeeper()(req,res,function(){
     req_cookie = twit.cookie(req);
     twit.options.access_token_key = req_cookie.access_token_key;
     twit.options.access_token_secret = req_cookie.access_token_secret; 
@@ -126,7 +142,7 @@ app.get('/twitter_callback', function(req, res){
         res.render('signin_with_twitter',view_data);
       });
   });
-});
+ });
 
 
 http.createServer(app).listen(app.get('port'), function(){
